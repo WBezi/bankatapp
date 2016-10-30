@@ -82,12 +82,12 @@ public class Account {
 		balance = balance - moneyToWithdraw;
 	}
 
-	public void validate(double moneyToWithdraw) {
+	private static void validate(double moneyToWithdraw) {
 		if (moneyToWithdraw < 0)
 			throw new IllegalAmountException();
 	}
 
-	private void assertAccountSufficientlyProvisionned(double amount,
+	private static void assertAccountSufficientlyProvisionned(double amount,
 			double moneyToWithdraw) {
 		if (amount < moneyToWithdraw)
 			throw new InsufficientlyProvisionnedAccountException();
